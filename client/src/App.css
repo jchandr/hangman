@@ -6,7 +6,6 @@
 
 .guessWord {
   display: flex;
-  align-items: center;
 }
 
 .alphabetButtonBlock {
