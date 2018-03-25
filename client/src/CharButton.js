@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import { letterGuess, setGuessWordBlock } from './actions'
 import './App.css';
-import { letterGuess } from './actions'
 
 class CharButton extends Component {
-
-  componentDidMount(){
-  }
-
   handleClick(x) {
     this.props.letterGuess(x)
-    this.render()
+    this.props.setGuessWordBlock(x)
   }
 
   render() {
@@ -29,10 +25,11 @@ function mapStateToProps(state) {
   };
 }
 
-// Get actions and pass them as props to to UserList
-//      > now UserList has this.props.selectUser
 function matchDispatchToProps(dispatch){
-  return bindActionCreators({letterGuess: letterGuess}, dispatch);
+  return bindActionCreators({
+    letterGuess: letterGuess,
+    setGuessWordBlock: setGuessWordBlock
+  }, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps) (CharButton);

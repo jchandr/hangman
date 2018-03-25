@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const generatePassword = require('password-generator');
+// const generatePassword = require('password-generator');
 
 const app = express();
 
@@ -15,9 +15,9 @@ app.get('/api/passwords', (req, res) => {
   // const passwords = Array.from(Array(count).keys()).map(i =>
   //   generatePassword(12, false)
   // )
-  const passwords = ['NEWSPAPER'];
+  const wordToGuess = 'NEWSPAPER';
   // Return them as json
-  res.json(passwords);
+  res.json(wordToGuess);
 
   console.log(`Sent ${count} passwords`);
 });

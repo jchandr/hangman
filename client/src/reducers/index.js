@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import alphabetBlockReducer from './alphabet-block-reducer'
-// import wordToGuessReducer from './word-to-guess-reducer'
+import guessWordReducer from './guess-word-reducer'
+import originalWordToGuessReducer from './original-word-to-guess-reducer'
 
 const allReducers = combineReducers({
   alphabetBlock: alphabetBlockReducer,
-  // wordToGuess: wordToGuessReducer,
+  guessWordBlock: guessWordReducer,
+  originalWordToGuess: originalWordToGuessReducer
 })
 
 export default allReducers
