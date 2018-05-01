@@ -2,22 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Letter extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      charVal: this.props.charVal,
-      isGuessed: this.props.isGuessed
-    }
-  }
-
-  componentDidMount(){
-  }
-
-  handleClick() {
-  }
-
   render() {
-    const {isGuessed, charVal} = this.state
+    const {isGuessed, charVal} = this.props
     return (
       <div className={isGuessed ? 'guessedLetter' : 'notGuessedLetter'}>
         {isGuessed ? charVal : ' '}</div>
